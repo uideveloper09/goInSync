@@ -1,0 +1,11 @@
+// ============================================
+// Container - Layout Container
+// ============================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.container {
+  @include container;
+}
+

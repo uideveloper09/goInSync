@@ -1,0 +1,278 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4 / 2;
+  text-decoration: none;
+  color: #343434;
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+  color: #ff9501; // Orange color
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.logoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logoText {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  font-size: 1.875rem; // Increased from 1.75rem
+  line-height: 1;
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  transform: skewX(-5deg); // Slight italic/slanted effect
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Subtle shadow effect
+  position: relative;
+}
+
+.logoTextFirst {
+  color: #ff9501; // Orange for first letter
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  text-transform: none; // Override lowercase transform to keep G capital
+}
+
+.logoTextRest {
+  color: #1a2c32; // Dark teal-grey for rest of letters
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.logoWheelsIcon {
+  width: 0.85em;
+  height: 0.85em;
+  color: #ff9501; // Orange color
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  vertical-align: bottom;
+  margin-bottom: -2px;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.logoTextIcon {
+  width: 14px;
+  height: 12px;
+  color: #ff9501; // Orange color
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 19px;
+  left: 30px;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.logoSlogan {
+  font-size: 9px;
+  font-weight: 400;
+  color: #1a2c32; // Dark teal-grey for slogan
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 6px;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0.9;
+  transform: none; // No skew for slogan
+}
+
+.sloganText {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 5s steps(30, end) infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+// Size variants
+.small {
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+    padding: $spacing-1;
+  }
+  
+  .logoText {
+    font-size: 1.375rem; // Increased from 1.25rem
+    letter-spacing: 0;
+    gap: 0;
+  }
+  
+  .logoTextIcon {
+    width: 11px;
+    height: 9px;
+    bottom: 15px;
+    left: 24px;
+  }
+  
+  .logoWheelsIcon {
+    width: 0.85em;
+    height: 0.85em;
+  }
+  
+  .logoSlogan {
+    font-size: 7px;
+    margin-top: 5px;
+  }
+  
+  .logo {
+    gap: $spacing-3 / 2;
+  }
+}
+
+.medium {
+  .logoIcon {
+    width: 50px;
+    height: 50px;
+    padding: $spacing-2;
+  }
+  
+  .logoText {
+    font-size: 1.875rem; // Increased from 1.75rem
+    letter-spacing: 0;
+    gap: 0;
+  }
+  
+  .logoTextIcon {
+    width: 14px;
+    height: 12px;
+    bottom: 19px;
+    left: 30px;
+  }
+  
+  .logoWheelsIcon {
+    width: 0.85em;
+    height: 0.85em;
+  }
+  
+  .logoSlogan {
+    font-size: 9px;
+    margin-top: 6px;
+  }
+  
+  .logo {
+    gap: $spacing-4 / 2;
+  }
+}
+
+.large {
+  .logoIcon {
+    width: 70px;
+    height: 70px;
+    padding: $spacing-3;
+  }
+  
+  .logoText {
+    font-size: 2.5rem; // Increased from 2.25rem
+    letter-spacing: 0;
+    gap: 0;
+  }
+  
+  .logoTextIcon {
+    width: 20px;
+    height: 17px;
+    bottom: 27px;
+    left: 42px;
+  }
+  
+  .logoWheelsIcon {
+    width: 0.85em;
+    height: 0.85em;
+  }
+  
+  .logoSlogan {
+    font-size: 11px;
+    margin-top: 7px;
+  }
+  
+  .logo {
+    gap: $spacing-5 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoText {
+    font-size: 1.625rem; // Increased from 1.5rem
+    letter-spacing: 0;
+    gap: 0;
+  }
+  
+  .logoTextIcon {
+    width: 12px;
+    height: 10px;
+    bottom: 16px;
+    left: 26px;
+  }
+  
+  .logoWheelsIcon {
+    width: 0.85em;
+    height: 0.85em;
+  }
+  
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+    padding: $spacing-1;
+  }
+  
+  .logo {
+    gap: $spacing-3 / 2;
+  }
+  
+  .logoSlogan {
+    font-size: 8px;
+    margin-top: 5px;
+  }
+}

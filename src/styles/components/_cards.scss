@@ -1,0 +1,27 @@
+// ============================================
+// Cards - Card Components
+// ============================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.card {
+  @include card-base;
+  
+  &__header {
+    margin-bottom: $spacing-4;
+    padding-bottom: $spacing-4;
+    border-bottom: 1px solid $gray-200;
+  }
+  
+  &__body {
+    margin-bottom: $spacing-4;
+  }
+  
+  &__footer {
+    margin-top: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid $gray-200;
+  }
+}
+

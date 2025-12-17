@@ -1,0 +1,390 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.topBar {
+  background: #1a2c32; // Dark background
+  color: $white;
+  padding: $spacing-3 0;
+  font-size: $font-size-sm;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-top: none;
+  
+  // Orange right section with diagonal tilt from left
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 110px;
+    right: 0;
+    width: 40%;
+    background: #ff9501;
+    z-index: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.topBarContent {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  position: relative;
+  z-index: 1;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  flex-wrap: wrap;
+  
+  @include respond-to(md) {
+    gap: $spacing-8;
+  }
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  color: $white;
+  text-decoration: none;
+  transition: all 0.3s ease-out; // Matching travelocar.com
+  
+  &:hover {
+    color: $white;
+    opacity: 0.9;
+  }
+  
+  svg {
+    color: #ff9501; // Orange icons for mail and phone
+    flex-shrink: 0;
+  }
+}
+
+.supportText {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  color: #fff; // White text for support hours
+  font-weight: $font-weight-normal;
+  
+  svg {
+    color: #ff9501; // Orange icon for clock
+    flex-shrink: 0;
+  }
+}
+
+.topBarActions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  flex-wrap: wrap;
+  
+  @media (max-width: 1024px) {
+    gap: $spacing-2;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-2;
+    width: 100%;
+  }
+}
+
+.topBarLink {
+  color: #1a2c32; // Dark teal-grey text for login and register
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  transition: all 0.3s ease-out; // Matching travelocar.com
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+  
+  @media (max-width: 1024px) {
+    font-size: $font-size-xs;
+    gap: $spacing-1;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: $font-size-sm;
+  }
+  
+  &:hover {
+    color: #1a2c32;
+    opacity: 0.9;
+  }
+  
+  svg {
+    color: #1a2c32; // Dark teal-grey icons for login and car
+    flex-shrink: 0;
+    
+    @media (max-width: 1024px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  margin-left: $spacing-4;
+  padding-left: $spacing-4;
+  border-left: 1px solid rgba($white, 0.2);
+  flex-wrap: wrap;
+  
+  @media (max-width: 1024px) {
+    margin-left: $spacing-2;
+    padding-left: $spacing-2;
+    gap: $spacing-1;
+  }
+  
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba($white, 0.2);
+    padding-top: $spacing-2;
+    margin-top: $spacing-2;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  span {
+    color: #1a2c32; // Dark teal-grey text for "Follow Us:"
+    margin-right: 0;
+    font-size: $font-size-sm;
+    white-space: nowrap;
+    
+    @media (max-width: 1024px) {
+      font-size: $font-size-xs;
+    }
+  }
+  
+  a {
+    color: $white; // White social media icons
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+    flex-shrink: 0;
+    
+    &:hover {
+      color: $white;
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+    
+    svg {
+      width: 18px;
+      height: 18px;
+      
+      @media (max-width: 1024px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.header {
+  background: $white;
+  box-shadow: $shadow-md;
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+}
+
+.container {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+  
+  @include respond-to(md) {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: $spacing-2;
+  }
+  
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background: $white;
+    flex-direction: column;
+    padding: $spacing-8;
+    box-shadow: $shadow-lg;
+    transform: translateX(-100%);
+    transition: transform $transition-base $transition-ease;
+    align-items: flex-start;
+  }
+}
+
+.navOpen {
+  @media (max-width: 767px) {
+    transform: translateX(0);
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  color: $secondary-dark;
+  font-weight: $font-weight-semibold;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-md;
+  transition: all 0.3s ease-out; // Matching travelocar.com
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  position: relative;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  // Home link is yellow
+  &:first-child {
+    color: $primary;
+    
+    svg {
+      color: $primary;
+    }
+  }
+  
+  &:hover {
+    background: $gray-100;
+    color: $primary;
+    
+    svg {
+      color: $primary;
+    }
+  }
+  
+  svg {
+    color: $secondary-dark;
+    transition: color 0.3s ease-out;
+  }
+}
+
+.dropdown {
+  position: relative;
+  
+  &:hover .dropdownMenu {
+    display: block;
+  }
+  
+  > .navLink {
+    &::after {
+      content: '▼';
+      font-size: 10px;
+      margin-left: $spacing-1;
+      color: inherit;
+    }
+  }
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $white;
+  box-shadow: $shadow-lg;
+  border-radius: $radius-md;
+  padding: $spacing-2;
+  min-width: 250px;
+  z-index: $z-dropdown;
+  margin-top: $spacing-2;
+}
+
+.dropdownItem {
+  display: block;
+  padding: $spacing-2 $spacing-4;
+  color: $secondary-dark;
+  text-decoration: none;
+  border-radius: $radius-sm;
+  transition: all 0.3s ease-out; // Matching travelocar.com
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  
+  &:hover {
+    background: $gray-100;
+    color: $primary;
+  }
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $secondary-dark;
+  
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBarContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-3;
+  }
+  
+  .contactInfo {
+    gap: $spacing-4;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .topBarActions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: $spacing-3;
+    flex-wrap: wrap;
+  }
+  
+  .socialLinks {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba($white, 0.2);
+    padding-top: $spacing-3;
+    margin-top: $spacing-3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

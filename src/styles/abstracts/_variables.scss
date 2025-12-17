@@ -1,0 +1,110 @@
+// ============================================
+// Variables - Colors, Typography, Spacing
+// ============================================
+
+// GoSync Color Scheme - Matching Travelocar.com
+$primary: #ff9501; // Orange theme color
+$primary-dark: #d6a030;
+$primary-light: #f5c55a;
+
+$secondary: #333333; // Dark grey
+$secondary-light: #555555;
+$secondary-dark: #111111; // Footer bg from travelocar.com
+$secondary-darker: #181818; // Footer bg2 from travelocar.com
+
+// Neutral Colors
+$white: #ffffff;
+$black: #000000;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+// Semantic Colors
+$success: #10b981;
+$error: #ef4444;
+$warning: #f59e0b;
+$info: #3b82f6;
+
+// Typography - Matching Travelocar.com
+$font-family-base: 'Roboto', sans-serif; // Body font from travelocar.com
+$font-family-heading: 'Inter', sans-serif; // Heading font from travelocar.com
+$font-family-mono: 'Courier New', Courier, monospace;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// Spacing
+$spacing-unit: 0.25rem;
+$spacing-0: 0;
+$spacing-1: $spacing-unit * 1;
+$spacing-2: $spacing-unit * 2;
+$spacing-3: $spacing-unit * 3;
+$spacing-4: $spacing-unit * 4;
+$spacing-5: $spacing-unit * 5;
+$spacing-6: $spacing-unit * 6;
+$spacing-8: $spacing-unit * 8;
+$spacing-10: $spacing-unit * 10;
+$spacing-12: $spacing-unit * 12;
+$spacing-16: $spacing-unit * 16;
+$spacing-20: $spacing-unit * 20;
+
+// Border Radius
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-xl: 1rem;
+$radius-2xl: 1.5rem;
+$radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Transitions
+$transition-fast: 150ms;
+$transition-base: 300ms;
+$transition-slow: 500ms;
+$transition-ease: ease-in-out;
+
+// Z-index layers
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;

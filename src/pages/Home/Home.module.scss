@@ -1,0 +1,489 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.home {
+  min-height: calc(100vh - 80px);
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  background: linear-gradient(135deg, $secondary 0%, $secondary-dark 100%);
+}
+
+.heroCarousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.heroSlides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.heroSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  min-height: 500px;
+  
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.heroSlideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($black, 0.4);
+    z-index: 1;
+  }
+}
+
+.carouselNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: $white;
+  left: 20px;
+  
+  &:hover {
+    background: rgba(255, 149, 1, 0.8);
+  }
+  
+  &.carouselNavNext {
+    left: auto;
+    right: 20px;
+  }
+}
+
+.carouselDots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.carouselDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid $white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  
+  &.active {
+    background: $primary;
+    border-color: $primary;
+    width: 30px;
+    border-radius: 6px;
+  }
+  
+  &:hover {
+    background: rgba(255, 149, 1, 0.8);
+  }
+}
+
+.heroContent {
+  @include container;
+  position: relative;
+  z-index: 2;
+  padding: 0 $spacing-4 $spacing-8 $spacing-4;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-6;
+  line-height: $line-height-tight;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-8;
+  color: #fff;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: $line-height-relaxed;
+}
+
+.heroButtons {
+  display: flex;
+  gap: $spacing-4;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: $spacing-3 $spacing-6;
+  border-radius: $radius-md;
+  text-decoration: none;
+  font-weight: $font-weight-medium;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  font-size: $font-size-sm;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btnArrowLink {
+  background: transparent;
+  color: $white;
+  box-shadow: none;
+  border: none;
+  padding: $spacing-2 $spacing-4;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  
+  &::after {
+    content: '→';
+    display: inline-block;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  
+  &:hover {
+    color: $primary;
+    
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+  
+  &:active {
+    color: $primary;
+  }
+  
+  &:focus {
+    outline: none;
+    color: $primary;
+  }
+}
+
+// Booking Section - Color 1 (Light Orange)
+.bookingSection {
+  padding: $spacing-20 $spacing-4 $spacing-16;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+  
+  .sectionTitle {
+    color: #1a2c32;
+  }
+  
+  .sectionSubtitle {
+    color: #2d4a56;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: $font-size-2xl;
+  margin-bottom: $spacing-4;
+  color: $secondary;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: $font-size-lg;
+  color: $gray-600;
+  margin-bottom: $spacing-8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// Services Section - Color 2 (Light Teal)
+.servicesSection {
+  padding: $spacing-16 $spacing-4;
+  background: linear-gradient(180deg, #e8f0f2 0%, #d1e1e5 100%);
+  
+  .sectionTitle {
+    color: #1a2c32;
+  }
+  
+  .sectionSubtitle {
+    color: #2d4a56;
+  }
+}
+
+.servicesGrid {
+  @include grid-auto(280px);
+  margin-top: $spacing-12;
+}
+
+.serviceCard {
+  @include card-base;
+  text-align: center;
+  padding: $spacing-8;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  background: $primary;
+  border-radius: $radius-full;
+  @include flex-center;
+  margin: 0 auto $spacing-6;
+  color: $secondary;
+}
+
+.serviceCard h3 {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-4;
+  color: $secondary;
+  font-weight: $font-weight-bold;
+}
+
+.serviceCard p {
+  color: $gray-600;
+  line-height: $line-height-relaxed;
+}
+
+// Why Choose Us Section - Color 1 (Light Orange)
+.whyChooseSection {
+  padding: $spacing-16 $spacing-4;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+  
+  .sectionTitle {
+    color: #1a2c32;
+  }
+  
+  .sectionSubtitle {
+    color: #2d4a56;
+  }
+}
+
+.featuresGrid {
+  @include grid-auto(250px);
+  margin-top: $spacing-12;
+}
+
+.featureCard {
+  @include card-base;
+  text-align: center;
+  padding: $spacing-8;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.featureNumber {
+  position: absolute;
+  top: $spacing-4;
+  right: $spacing-4;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary;
+  opacity: 0.3;
+}
+
+.featureIcon {
+  width: 80px;
+  height: 80px;
+  background: $primary;
+  border-radius: $radius-full;
+  @include flex-center;
+  margin: 0 auto $spacing-6;
+  color: $secondary;
+}
+
+.featureCard h3 {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-4;
+  color: $secondary;
+  font-weight: $font-weight-bold;
+}
+
+.featureCard p {
+  color: $gray-600;
+  line-height: $line-height-relaxed;
+}
+
+// Testimonials Section - Color 2 (Light Teal)
+.testimonialsSection {
+  padding: $spacing-16 $spacing-4;
+  background: linear-gradient(180deg, #e8f0f2 0%, #d1e1e5 100%);
+  
+  .sectionTitle {
+    color: #1a2c32;
+  }
+  
+  .sectionSubtitle {
+    color: #2d4a56;
+  }
+}
+
+.testimonialsGrid {
+  @include grid-auto(280px);
+  margin-top: $spacing-12;
+}
+
+.testimonialCard {
+  @include card-base;
+  padding: $spacing-8;
+  text-align: center;
+}
+
+.testimonialIcon {
+  color: $primary;
+  margin-bottom: $spacing-4;
+}
+
+.testimonialText {
+  font-style: italic;
+  color: $gray-700;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.testimonialAuthor {
+  h4 {
+    font-size: $font-size-lg;
+    color: $secondary;
+    margin-bottom: $spacing-1;
+    font-weight: $font-weight-bold;
+  }
+  
+  span {
+    color: $gray-500;
+    font-size: $font-size-sm;
+  }
+}
+
+// Process Section - Color 3 (White/Light)
+.processSection {
+  padding: $spacing-16 $spacing-4;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  
+  .sectionTitle {
+    color: #1a2c32;
+  }
+  
+  .sectionSubtitle {
+    color: #2d4a56;
+  }
+}
+
+.processGrid {
+  @include grid-auto(250px);
+  margin-top: $spacing-12;
+}
+
+.processCard {
+  @include card-base;
+  text-align: center;
+  padding: $spacing-8;
+  position: relative;
+}
+
+.processNumber {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $primary;
+  margin-bottom: $spacing-4;
+}
+
+.processCard h3 {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-4;
+  color: $secondary;
+  font-weight: $font-weight-bold;
+}
+
+.processCard p {
+  color: $gray-600;
+  line-height: $line-height-relaxed;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: $font-size-2xl;
+  }
+  
+  .heroSubtitle {
+    font-size: $font-size-base;
+  }
+  
+  .sectionTitle {
+    font-size: $font-size-2xl;
+  }
+  
+}

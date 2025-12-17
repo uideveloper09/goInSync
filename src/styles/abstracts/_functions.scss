@@ -1,0 +1,25 @@
+// ============================================
+// Functions - Utility Functions
+// ============================================
+
+@import 'variables';
+
+// Convert px to rem
+@function rem($pixels, $base: 16) {
+  @return ($pixels / $base) * 1rem;
+}
+
+// Get color with opacity
+@function color-with-opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// Calculate contrast color
+@function contrast-color($color) {
+  @if (lightness($color) > 50) {
+    @return $black;
+  } @else {
+    @return $white;
+  }
+}
+

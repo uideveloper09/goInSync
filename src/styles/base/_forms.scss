@@ -1,0 +1,21 @@
+// ============================================
+// Forms - Base Form Styles
+// ============================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input, textarea, select {
+  @include focus-visible;
+}
+
+button {
+  @include focus-visible;
+}
+
